@@ -1,0 +1,6 @@
+lb main:
+    `This 32 `is 32 `Lipsem! 10
+    flip :pr
+        pchar pop
+    ~pr
+endl

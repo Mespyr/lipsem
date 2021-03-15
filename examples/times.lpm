@@ -1,0 +1,17 @@
+lb main:
+    25 .multiply
+    print
+endl
+
+
+lb multiply:
+    :loop
+        dupe 
+    jmp 1 5
+    -loop
+
+    :enter
+        add
+    jmp 1 1
+    -enter
+endl

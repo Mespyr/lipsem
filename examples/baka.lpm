@@ -1,0 +1,8 @@
+lb main:
+    :enter
+        `baka 10 flip
+        :loop
+            pchar pop
+        ~loop
+    -enter
+endl

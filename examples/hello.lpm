@@ -1,0 +1,4 @@
+lb main:
+    `Hello 32 `world! 10 flip
+    :L pchar pop ~L
+endl
