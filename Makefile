@@ -11,8 +11,10 @@ lipsem: $(FILES)
 	g++ $(BUILD_FILES) -o lipsem -Wall 
 
 remove_trash: 
+	@echo "Deleting all example files."
 	rm -r source.lpm
 	rm -r examples/
 
 clean:
+	@echo "Removing 'lipsem' executable."
 	rm -r lipsem
