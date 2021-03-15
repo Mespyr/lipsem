@@ -1,6 +1,6 @@
 lb main:
     :enter
-        `baka 10 flip
+        `This 32 `is 32 `a 32 `loop! 10 flip
         :loop
             pchar pop
         ~loop
