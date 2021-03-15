@@ -14,6 +14,7 @@ Then you want to run,
 ```bash
 make lipsem
 ```
+This will create an executable called `lipsem` which you can play with.
 
 Optionally, if you want to remove all unnecessary files, then you can run,
 ```bash
