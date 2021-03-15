@@ -21,4 +21,3 @@ Optionally, if you want to remove all unnecessary files, then you can run,
 make remove_trash
 ```
 This will remove all examples.
-

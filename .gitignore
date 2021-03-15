@@ -30,6 +30,3 @@
 *.exe
 *.out
 *.app
-
-#lipsem executable for testing
-lipsem 
