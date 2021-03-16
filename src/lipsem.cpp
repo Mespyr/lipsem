@@ -159,8 +159,46 @@ void lipsem::Reader::next()
             stack.push_back(n);
         }
     }
+    else if (tok.value == "bk") {
+        stack.insert(stack.begin(), stack.back());
+        stack.pop_back();
+    }
+    else if (tok.value == "tv") {
+        if (idx+1==size) {
+            has_error = true;
+            eof = 1;
+            error = unknown_error{0, "EOF Error", "Unexpected EOF while parsing.", tok};
+        } else {
+            idx++;
+            lipsem::token skip_size = node.at(idx);
+            if (is_int(skip_size.value)) {
+                int skip = atoi(skip_size.value.c_str());
 
+                if (idx+1==size) {
+                    has_error = true;
+                    eof = 1;
+                    error = unknown_error{0, "EOF Error", "Unexpected EOF while parsing.", tok};
+                } else {
+                    idx++;
+                    lipsem::token wanted_size = node.at(idx);
+                    
+                    if (is_int(wanted_size.value)) {
+                        int w_size = atoi(wanted_size.value.c_str());
+                        if (w_size == stack.back()) idx+=skip;
+                    } else {
+                        has_error = true;
+                        eof = 1;
+                        error = unknown_error{0, "Type Error", "Stack size can't be a non-integer.", tok};
+                    }
 
+                }
+            } else {
+                has_error = true;
+                eof = 1;
+                error = unknown_error{0, "Type Error", "Can't set skip size for `tv` to a non-integer.", tok};
+            }
+        }
+    }
     // custom
     else if (tok.value.front() == '.')
     {

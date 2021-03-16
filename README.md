@@ -20,4 +20,4 @@ Optionally, if you want to remove all unnecessary files, then you can run,
 ```bash
 make remove_trash
 ```
-This will remove all examples.
+This will remove all example files.

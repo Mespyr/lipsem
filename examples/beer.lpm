@@ -1,0 +1,41 @@
+lb next_bottle:
+    1 flip
+    sub
+endl
+
+lb pLast:
+    :loop
+        pchar pop
+    jmp 1 1
+    -loop
+endl
+
+lb verse:
+    print 
+    32 `bottles 32 `of 32 `beer 32 `on 32 `the 32 `wall, 10
+    flip bk
+    .pLast
+
+    print 
+    32 `bottles 32 `of 32 `beer! 10
+    flip bk
+    .pLast
+
+    `Take 32 `one 32 `down, 32 `pass 32 `it 32 `around, 10 
+    flip bk
+    .pLast
+
+    .next_bottle
+    print 
+    32 `bottles 32 `of 32 `beer 32 `on 32 `the 32 `wall! 10 10
+    flip bk
+    .pLast
+endl
+
+lb main:
+    99
+    :loop
+        .verse
+    tv 1 0
+    -loop
+endl
