@@ -37,6 +37,10 @@ namespace Dictionary
             }
             return tok;
         }
+        void clear()
+        {
+            keys.clear(); values.clear();
+        }
     };
     
 } // namespace Dictionary

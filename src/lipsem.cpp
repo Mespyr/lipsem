@@ -38,6 +38,7 @@ void lipsem::Reader::next()
             screenstack.pop_back();
             name = lastshot.name;
             idx = lastshot.idx;
+            labels = lastshot.labels;
         }
         return;
     }
@@ -148,7 +149,18 @@ void lipsem::Reader::next()
             }
         }
     }
-    
+    else if (tok.value == "gchar") stack.push_back(getchar());
+    else if (tok.value == "gline") {
+        std::string line;
+        std::getline (std::cin, line);
+        for (int i = 0; i < (int) line.length(); i++)
+        {
+            char n = line.at(i);
+            stack.push_back(n);
+        }
+    }
+
+
     // custom
     else if (tok.value.front() == '.')
     {
@@ -159,10 +171,11 @@ void lipsem::Reader::next()
         } else {
             std::string key = tok.value.substr(1) + ":";
             if (ast.has_key(key)) {
-                lipsem::Screenshot shot{idx, name};
+                lipsem::Screenshot shot{idx, name, labels};
                 screenstack.push_back(shot);
                 name = key;
                 idx = -1;
+                labels.clear();
             } else {
                 has_error = true;
                 eof = 1;

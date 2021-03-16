@@ -1,6 +1,25 @@
-lb main:
-    `This 32 `is 32 `Lipsem! 10
-    flip :pr
+lb inner:
+    :tap
         pchar pop
-    ~pr
+    ~tap
+    10 pchar pop
+
+    :top
+        65
+    jmp 1 100
+    -top
+
+    :loop
+        pchar pop
+    ~loop
+    10 pchar pop
+
+endl
+
+lb main:
+    :loop
+        65
+    jmp 1 40
+    -loop
+    .inner
 endl

@@ -1,0 +1,19 @@
+lb clear:
+    `[2J[;H flip
+    pchar pop
+    pchar pop
+    pchar pop
+    pchar pop
+    pchar pop
+    pchar pop
+    pchar pop
+    pchar pop
+endl
+
+lb main:
+    .clear
+    `I 32 `Cleared 32 `The 32 `Screen! 10 flip
+    :Loop
+        pchar pop
+    ~Loop
+endl

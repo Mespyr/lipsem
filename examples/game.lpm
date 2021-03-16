@@ -1,0 +1,47 @@
+lb clear:
+    `[2J[;H flip
+    :loop
+        pchar pop 
+    ~loop
+endl
+
+
+lb stack_out:
+    flip
+    :loop
+        pchar pop
+    ~loop
+endl
+
+
+lb clear_stack:
+    :loop pop ~loop
+endl
+
+
+lb check_size:
+    jmp 2 11
+        .clear_stack `no
+endl
+
+
+lb main:
+    .clear
+    `Welcome 32 `to 32 `the 32 `guessing 32 `game! 10
+    .stack_out
+
+    :loop
+        `Type 32 `any 32 `sentence. 32 
+        `If 32 `it 32 `has 32 `the 32 `right 32 `length, 32 `you 32 `win!! 10
+        62 32 .stack_out
+        gline
+        .check_size
+
+        jmp 9 2
+            .clear_stack
+            `You 32 `Won!! 10 .stack_out 
+        jmp 7 0
+            .clear_stack
+            `You're 32 `Wrong!! 10 .stack_out
+    -loop
+endl
