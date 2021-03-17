@@ -1,6 +1,8 @@
 lb main:
-    `Hello, 32  `Lipsem!! 10 flip 
-    :loop 
-        pchar pop 
-    ~loop
+    `Some .spc `Random .spc `Stuff 10 flip
+    :print
+        pchar pop
+    ~print
 endl
+
+lb spc: 32 endl
