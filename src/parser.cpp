@@ -1,6 +1,6 @@
-#include "parser.h"
-#include "tokens.h"
-#include "errors.h"
+#include "../include/parser.h"
+#include "../include/tokens.h"
+#include "../include/errors.h"
 
 #include <vector>
 

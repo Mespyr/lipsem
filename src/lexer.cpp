@@ -1,7 +1,7 @@
 #include <vector>
 #include <string>
-#include "lexer.h"
-#include "tokens.h"
+#include "../include/lexer.h"
+#include "../include/tokens.h"
 
 std::vector<lipsem::token> lipsem::tokenize(std::string code)
 {

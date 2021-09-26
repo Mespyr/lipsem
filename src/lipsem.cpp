@@ -1,7 +1,7 @@
-#include "lipsem.h"
-#include "parser.h"
-#include "errors.h"
-#include "tokens.h"
+#include "../include/lipsem.h"
+#include "../include/parser.h"
+#include "../include/errors.h"
+#include "../include/tokens.h"
 
 #include <vector>
 #include <algorithm>
@@ -95,7 +95,7 @@ void lipsem::Reader::next()
     else if (tok.value == "flip") {
         std::reverse(stack.begin(), stack.end());
     }
-    else if (tok.value == "dupe") {
+    else if (tok.value == "dupl") {
         if ((int) stack.size() == 0) {
             has_error = true;
             eof = 1;
@@ -149,8 +149,8 @@ void lipsem::Reader::next()
             }
         }
     }
-    else if (tok.value == "gchar") stack.push_back(getchar());
-    else if (tok.value == "gline") {
+    else if (tok.value == "getchar") stack.push_back(getchar());
+    else if (tok.value == "getline") {
         std::string line;
         std::getline (std::cin, line);
         for (int i = 0; i < (int) line.length(); i++)
@@ -283,5 +283,11 @@ void lipsem::Reader::next()
                 error = unknown_error{0, "Name Error", "No label called '"+key+"'.", tok};
             }
         }
+    }
+    else 
+    {
+        has_error = true;
+        eof = 1;
+        error = unknown_error{0, "Keyword Error", "Unknown keyword called '"+tok.value+"'.", tok};
     }
 }

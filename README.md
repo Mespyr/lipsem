@@ -5,19 +5,8 @@ It uses simple keywords to implement a huge amount of features.
 
 ## Installing 
 
-To install Lipsem, you must first clone this directory onto your computer by running 
+To install Lipsem, you must first clone this repo and run
 ```bash
-git clone https://github.com/Mespyr/lipsem.git
-cd lipsem
-```
-Then you want to run,
-```bash
-make lipsem
+make
 ```
 This will create an executable called `lipsem` which you can play with.
-
-Optionally, if you want to remove all unnecessary files, then you can run,
-```bash
-make remove_trash
-```
-This will remove all example files.

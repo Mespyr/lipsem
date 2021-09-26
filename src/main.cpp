@@ -1,7 +1,7 @@
-#include "lexer.h"
-#include "tokens.h"
-#include "parser.h"
-#include "lipsem.h"
+#include "../include/lexer.h"
+#include "../include/tokens.h"
+#include "../include/parser.h"
+#include "../include/lipsem.h"
 
 #include <iostream>
 #include <fstream>

@@ -6,7 +6,7 @@ endl
 
 lb multiply:
     :loop
-        dupe 
+        dupl 
     jmp 1 5
     -loop
 

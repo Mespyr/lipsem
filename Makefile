@@ -1,18 +1,24 @@
-LEXER=src/lexer.cpp src/lexer.h
-PARSER=src/parser.h src/parser.cpp
-MAIN=src/lipsem.h src/lipsem.cpp
-STANDALONE_HEADERS=src/errors.h src/tokens.h src/dict.h
+CPP = g++
+CPPFLAGS = -c -g
+LDFLAGS = -g 
+SRC = $(wildcard src/*.cpp)
+HDR = $(wildcard include/*.h)
+OBJ = $(SRC:.cpp=.o)
+EXEC = lipsem
 
-BUILD_FILES=src/main.cpp src/lexer.cpp src/parser.cpp src/lipsem.cpp
-FILES=$(MAIN) $(LEXER) $(PARSER) $(STANDALONE_HEADERS) src/main.cpp 
+all: $(SRC) $(OBJ) $(EXEC)
 
+$(EXEC): $(OBJ)
+	$(CPP) $(LDFLAGS) $^ -o $@
 
-lipsem: $(FILES)
-	g++ $(BUILD_FILES) -o lipsem -Wall 
-
-remove_trash: 
-	rm -r source.lpm
-	rm -r examples/
+%.o: %.cpp $(HDR)
+	$(CPP) $(CPPFLAGS) $< -o $@
 
 clean:
-	rm -r lipsem
+	rm src/*.o $(EXEC)
+
+clean-obj:
+	rm src/*.o
+
+clean-exec:
+	rm $(EXEC)

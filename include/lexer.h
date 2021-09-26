@@ -1,9 +1,10 @@
 #ifndef LEXER_H
 #define LEXER_H
 
+#include "tokens.h"
+
 #include <vector>
 #include <string>
-#include "tokens.h"
 
 namespace lipsem
 {
