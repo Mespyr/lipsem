@@ -9,4 +9,4 @@ To install Lipsem, you must first clone this repo and run
 ```bash
 make
 ```
-This will create an executable called `lipsem` which you can play with.
+This will create an executable called `lipsem`.
