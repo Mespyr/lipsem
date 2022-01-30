@@ -1,8 +1,7 @@
+lb spc: 32 endl
 lb main:
     `Some .spc `Random .spc `Stuff 10 flip
     :print
         pchar pop
     ~print
 endl
-
-lb spc: 32 endl

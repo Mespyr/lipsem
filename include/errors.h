@@ -12,11 +12,7 @@ namespace lipsem
     {
         lipsem::token tok;
         std::string msg;
-        void raise()
-        {
-            std::cout << "Parsing Error on line " << tok.line << "." << std::endl;
-            std::cout << msg << std::endl;
-        }
+        void raise();
     };
     struct unknown_error
     {
@@ -25,17 +21,7 @@ namespace lipsem
         std::string name;
         std::string msg;
         lipsem::token tok;
-        void raise()
-        {
-            if (is_runtime)
-            {
-                std::cout << name << " found." << std::endl;
-                std::cout << msg << std::endl;
-            } else {
-                std::cout << name << " on line " << tok.line << "." << std::endl;
-                std::cout << msg << std::endl;
-            }
-        }
+        void raise();
     };
 } // namespace lipsem
 

@@ -45,7 +45,7 @@ int evaluate(std::string code) {
     {
         reader.error.raise();
         return 1;
-    }   
+    }
     return 0;
 }
 

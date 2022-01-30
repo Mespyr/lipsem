@@ -10,10 +10,7 @@ namespace lipsem
         unsigned int line;
         std::string value;
 
-        void print()
-        {
-            std::cout << "Line: " << line << ", Value: " << value << std::endl;
-        }
+        void print();
     };
 } // namespace lipsem
 
